@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon-cyan: #00f2ff;
+  --color-neon-blue: #0070ff;
+  --color-neon-purple: #bc13fe;
+  --color-neon-pink: #ff00ff;
+  --color-dark-bg: #030712;
+  --color-dark-card: #0f172a;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --border: rgba(0, 242, 255, 0.2);
+  --accent: #00f2ff;
+}
+
+.dark {
+  --background: #020617;
+  --foreground: #f8fafc;
+  --card: #0f172a;
+  --border: rgba(0, 242, 255, 0.3);
+  --accent: #00f2ff;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  @apply antialiased font-sans transition-colors duration-300;
+}
+
+@layer utilities {
+  .neon-border {
+    border: 1px solid var(--accent);
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.2), inset 0 0 5px rgba(0, 242, 255, 0.1);
+  }
+
+  .neon-glow-text {
+    text-shadow: 0 0 8px rgba(0, 242, 255, 0.5), 0 0 20px rgba(0, 242, 255, 0.2);
+  }
+
+  .neon-card {
+    @apply bg-white/80 dark:bg-slate-900/90 backdrop-blur-md border border-neon-cyan/20 rounded-2xl shadow-[0_0_15px_rgba(0,242,255,0.05)] transition-all duration-300;
+  }
+
+  .neon-card:hover {
+    @apply border-neon-cyan/40 shadow-[0_0_25px_rgba(0,242,255,0.15)];
+  }
+  
+  .btn-neon {
+    @apply bg-neon-cyan text-slate-900 font-bold shadow-[0_0_15px_rgba(0,242,255,0.4)] hover:shadow-[0_0_25px_rgba(0,242,255,0.6)] hover:scale-105 active:scale-95 transition-all;
+  }
+}
+
+/* Custom Scrollbar for Neon Theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+}
