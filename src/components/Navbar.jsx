@@ -65,6 +65,9 @@ const Navbar = () => {
 
             {user && (
               <div className="flex items-center gap-4 pl-6 border-l border-neon-cyan/20">
+                <span className="hidden sm:block text-[10px] font-black uppercase tracking-widest text-slate-500 dark:text-slate-400">
+                  {user.user_metadata?.full_name || user.email}
+                </span>
                  <button 
                   onClick={handleLogout}
                   className="flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-red-500 font-black text-[10px] uppercase tracking-widest transition-all"

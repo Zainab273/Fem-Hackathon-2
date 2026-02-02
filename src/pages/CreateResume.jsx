@@ -5,7 +5,7 @@ import { supabase } from '../components/services/supabaseClient';
 import TemplateSelector from '../components/TemplateSelector';
 import Button from '../components/ui/Button';
 import Input from '../components/ui/Input';
-import { Plus, Trash2, Save, ArrowLeft, ArrowRight, User, Briefcase, GraduationCap, Code } from 'lucide-react';
+import { Plus, Trash2, Save, ArrowLeft, ArrowRight, User, Briefcase, GraduationCap, Code, Layout } from 'lucide-react';
 
 const CreateResume = () => {
   const { user } = useAuth();
@@ -76,9 +76,6 @@ const CreateResume = () => {
     }
   };
 
-  const nextStep = () => setCurrentStep(prev => Math.min(prev + 1, 4));
-  const prevStep = () => setCurrentStep(prev => Math.max(prev - 1, 1));
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -102,11 +99,15 @@ const CreateResume = () => {
   };
 
   const steps = [
-    { id: 1, title: 'Personal', icon: User },
-    { id: 2, title: 'Experience', icon: Briefcase },
-    { id: 3, title: 'Education', icon: GraduationCap },
-    { id: 4, title: 'Finalize', icon: Code },
+    { id: 1, title: 'Design', icon: Layout },
+    { id: 2, title: 'Personal', icon: User },
+    { id: 3, title: 'Experience', icon: Briefcase },
+    { id: 4, title: 'Education', icon: GraduationCap },
+    { id: 5, title: 'Finalize', icon: Code },
   ];
+
+  const nextStep = () => setCurrentStep(prev => Math.min(prev + 1, 5));
+  const prevStep = () => setCurrentStep(prev => Math.max(prev - 1, 1));
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-[#020617] p-4 md:p-12 transition-colors duration-300">
@@ -134,9 +135,17 @@ const CreateResume = () => {
 
         <form onSubmit={handleSubmit} className="space-y-12">
           
-          {/* STEP 1: Personal Identity */}
+          {/* STEP 1: Design Selection */}
           {currentStep === 1 && (
             <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+               <h2 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tighter italic mb-8">Choose <span className="text-neon-cyan">Blueprint</span></h2>
+               <TemplateSelector selectedTemplate={template} onSelect={setTemplate} />
+            </div>
+          )}
+
+          {/* STEP 2: Personal Identity */}
+          {currentStep === 2 && (
+            <div className="animate-in fade-in slide-in-from-right-4 duration-500">
                <h2 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tighter italic mb-8">Personal <span className="text-neon-cyan">Identity</span></h2>
                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
                   <Input label="Professional Title" placeholder="e.g. Software Engineer" value={title} onChange={e => setTitle(e.target.value)} required />
@@ -162,8 +171,8 @@ const CreateResume = () => {
             </div>
           )}
 
-          {/* STEP 2: Work Experience */}
-          {currentStep === 2 && (
+          {/* STEP 3: Work Experience */}
+          {currentStep === 3 && (
             <div className="animate-in fade-in slide-in-from-right-4 duration-500">
                <div className="flex justify-between items-center mb-8">
                   <h2 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tighter italic">Work <span className="text-neon-cyan">Experience</span></h2>
@@ -186,8 +195,8 @@ const CreateResume = () => {
             </div>
           )}
 
-          {/* STEP 3: Education & Skills */}
-          {currentStep === 3 && (
+          {/* STEP 4: Education & Skills */}
+          {currentStep === 4 && (
             <div className="animate-in fade-in slide-in-from-right-4 duration-500 space-y-12">
                <div className="flex justify-between items-center">
                   <h2 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tighter italic">Academic <span className="text-neon-cyan">History</span></h2>
@@ -217,8 +226,8 @@ const CreateResume = () => {
             </div>
           )}
 
-          {/* STEP 4: Finalize */}
-          {currentStep === 4 && (
+          {/* STEP 5: Finalize */}
+          {currentStep === 5 && (
             <div className="animate-in fade-in slide-in-from-right-4 duration-500">
                <h2 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tighter italic mb-8 text-center">Final <span className="text-neon-cyan">Review</span></h2>
                <div className="max-w-2xl mx-auto space-y-10">
@@ -242,7 +251,7 @@ const CreateResume = () => {
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> {currentStep === 1 ? 'Cancel' : 'Previous'}
             </button>
             
-            {currentStep < 4 ? (
+            {currentStep < 5 ? (
               <Button onClick={nextStep} variant="primary" className="px-12 py-4 rounded-2xl" icon={ArrowRight}>Next Phase</Button>
             ) : (
               <Button type="submit" loading={loading} variant="primary" className="px-16 py-4 rounded-2xl" icon={Save}>Commit & Save</Button>

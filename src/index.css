@@ -56,6 +56,46 @@ body {
   }
 }
 
+/* Print Styles for Perfect PDF Export */
+@media print {
+  body {
+    background: white !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide everything except the resume itself */
+  nav, button, .sticky, footer:not(.resume-footer), .print\:hidden {
+    display: none !important;
+  }
+
+  /* Ensure the resume container takes full width and no shadow */
+  .max-w-5xl {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Reset scale for print */
+  .transform {
+    transform: none !important;
+  }
+
+  /* Page setup */
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  /* Ensure background colors and images print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+}
+
 /* Custom Scrollbar for Neon Theme */
 ::-webkit-scrollbar {
   width: 8px;

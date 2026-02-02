@@ -16,14 +16,152 @@ const Templates = () => {
   ];
 
   const templateList = [
-    { id: 'modern', name: 'Professional Blue', category: 'modern', desc: 'Sleek two-column design.', accent: 'bg-blue-500' },
-    { id: 'creative-bold', name: 'Creative Impact', category: 'creative', desc: 'Bold sidebar for creatives.', accent: 'bg-purple-600' },
-    { id: 'modern-minimal', name: 'Tech Minimalist', category: 'modern', desc: 'Clean, airy and focused.', accent: 'bg-emerald-500' },
-    { id: 'modern-dark', name: 'Executive Slate', category: 'modern', desc: 'Premium dark accents.', accent: 'bg-slate-800' },
-    { id: 'classic', name: 'Standard Corporate', category: 'classic', desc: 'Formal serif layout.', accent: 'bg-black dark:bg-white' },
-    { id: 'classic-elegant', name: 'Business Pro', category: 'classic', desc: 'Elegant and centered.', accent: 'bg-amber-600' },
-    { id: 'basic', name: 'Clean Minimalist', category: 'basic', desc: 'ATS-friendly simple text.', accent: 'bg-slate-400' },
-    { id: 'basic-compact', name: 'High Efficiency', category: 'basic', desc: 'Maximizes page space.', accent: 'bg-emerald-600' },
+    { 
+      id: 'modern', 
+      name: 'Modern Executive', 
+      category: 'modern', 
+      desc: 'Sleek two-column design with a modern touch.', 
+      accent: 'bg-blue-600',
+      preview: (
+        <div className="w-full h-full bg-white p-2 flex gap-1 text-[4px] leading-[1.2]">
+          <div className="w-1/3 bg-slate-50 border-r border-slate-100 p-1 space-y-2">
+            <div className="w-6 h-6 rounded-full bg-slate-200 mx-auto"></div>
+            <div className="space-y-1">
+              <div className="h-1 w-full bg-slate-200"></div>
+              <div className="h-1 w-4/5 bg-slate-100"></div>
+            </div>
+            <div className="space-y-1 mt-4">
+              <div className="h-1 w-full bg-blue-100"></div>
+              <div className="h-0.5 w-full bg-slate-100"></div>
+              <div className="h-0.5 w-full bg-slate-100"></div>
+            </div>
+          </div>
+          <div className="flex-1 p-1 space-y-2">
+            <div className="space-y-1">
+              <div className="h-2 w-1/2 bg-slate-800"></div>
+              <div className="h-1 w-1/3 bg-blue-600"></div>
+            </div>
+            <div className="h-px bg-slate-100 w-full"></div>
+            <div className="space-y-1">
+              <div className="h-1 w-full bg-slate-100"></div>
+              <div className="h-1 w-full bg-slate-100"></div>
+              <div className="h-1 w-3/4 bg-slate-100"></div>
+            </div>
+            <div className="space-y-1 pt-1">
+              <div className="h-1.5 w-1/3 bg-slate-800"></div>
+              <div className="h-1 w-full bg-slate-100"></div>
+              <div className="h-1 w-full bg-slate-100"></div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    { 
+      id: 'classic', 
+      name: 'Standard Corporate', 
+      category: 'classic', 
+      desc: 'Formal serif layout for corporate professionals.', 
+      accent: 'bg-slate-900',
+      preview: (
+        <div className="w-full h-full bg-white p-3 flex flex-col items-center gap-1 text-[4px] border-t-2 border-slate-800">
+          <div className="h-2 w-1/2 bg-slate-900 mb-0.5"></div>
+          <div className="flex gap-2 mb-2">
+            <div className="h-1 w-12 bg-slate-100"></div>
+            <div className="h-1 w-12 bg-slate-100"></div>
+          </div>
+          <div className="w-full h-px bg-slate-200 mb-2"></div>
+          <div className="w-full space-y-2">
+            <div className="flex justify-between items-center border-b border-slate-100 pb-0.5">
+              <div className="h-1 w-16 bg-slate-800"></div>
+              <div className="h-1 w-8 bg-slate-300"></div>
+            </div>
+            <div className="h-1 w-full bg-slate-100"></div>
+            <div className="h-1 w-full bg-slate-100"></div>
+            <div className="h-1 w-3/4 bg-slate-100"></div>
+            
+            <div className="flex justify-between items-center border-b border-slate-100 pb-0.5 mt-2">
+              <div className="h-1 w-16 bg-slate-800"></div>
+              <div className="h-1 w-8 bg-slate-300"></div>
+            </div>
+            <div className="h-1 w-full bg-slate-100"></div>
+          </div>
+        </div>
+      )
+    },
+    { 
+      id: 'creative', 
+      name: 'Creative Impact', 
+      category: 'creative', 
+      desc: 'Bold sidebar and design for creative roles.', 
+      accent: 'bg-purple-600',
+      preview: (
+        <div className="w-full h-full bg-white flex text-[4px]">
+          <div className="w-[35%] bg-slate-900 p-2 space-y-3">
+            <div className="w-6 h-6 rounded-full bg-slate-700 mx-auto border border-purple-500/30"></div>
+            <div className="space-y-1">
+              <div className="h-1 w-full bg-white"></div>
+              <div className="h-0.5 w-1/2 bg-purple-400"></div>
+            </div>
+            <div className="space-y-1 pt-2">
+              <div className="h-0.5 w-full bg-slate-700"></div>
+              <div className="h-0.5 w-full bg-slate-700"></div>
+              <div className="h-0.5 w-full bg-slate-700"></div>
+            </div>
+          </div>
+          <div className="flex-1 p-3 space-y-3">
+            <div className="flex items-center gap-1">
+              <div className="w-2 h-0.5 bg-purple-600"></div>
+              <div className="h-1.5 w-12 bg-slate-900"></div>
+            </div>
+            <div className="space-y-1">
+              <div className="h-1 w-full bg-slate-100"></div>
+              <div className="h-1 w-full bg-slate-100"></div>
+            </div>
+            <div className="flex items-center gap-1 mt-2">
+              <div className="w-2 h-0.5 bg-purple-600"></div>
+              <div className="h-1.5 w-12 bg-slate-900"></div>
+            </div>
+            <div className="space-y-1">
+              <div className="h-1 w-full bg-slate-100"></div>
+              <div className="h-1 w-full bg-slate-100"></div>
+              <div className="h-1 w-4/5 bg-slate-100"></div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    { 
+      id: 'basic', 
+      name: 'Clean Minimalist', 
+      category: 'basic', 
+      desc: 'ATS-friendly simple text-based design.', 
+      accent: 'bg-slate-400',
+      preview: (
+        <div className="w-full h-full bg-white p-4 space-y-3 text-[4px]">
+          <div className="border-b-2 border-slate-900 pb-1">
+            <div className="h-2 w-1/3 bg-slate-900 mb-1"></div>
+            <div className="h-1 w-1/2 bg-slate-400"></div>
+          </div>
+          <div className="space-y-1.5">
+            <div className="h-1 w-1/4 bg-slate-800 border-b border-slate-100"></div>
+            <div className="h-1 w-full bg-slate-50"></div>
+            <div className="h-1 w-full bg-slate-50"></div>
+          </div>
+          <div className="space-y-1.5">
+            <div className="h-1 w-1/4 bg-slate-800 border-b border-slate-100"></div>
+            <div className="flex justify-between">
+              <div className="h-1 w-1/3 bg-slate-700"></div>
+              <div className="h-1 w-8 bg-slate-200"></div>
+            </div>
+            <div className="h-1 w-full bg-slate-50"></div>
+          </div>
+          <div className="space-y-1.5">
+            <div className="h-1 w-1/4 bg-slate-800 border-b border-slate-100"></div>
+            <div className="h-1 w-full bg-slate-50"></div>
+          </div>
+        </div>
+      )
+    },
   ];
 
   const filteredTemplates = activeCategory === 'all' 
@@ -61,18 +199,9 @@ const Templates = () => {
           {filteredTemplates.map((template) => (
             <div key={template.id} className="group bg-white dark:bg-slate-900/60 backdrop-blur-sm rounded-[32px] overflow-hidden border border-slate-200 dark:border-neon-cyan/10 hover:shadow-[0_0_40px_rgba(0,242,255,0.1)] dark:hover:border-neon-cyan/40 transition-all duration-500 flex flex-col">
               <div className="aspect-[16/10] bg-slate-50 dark:bg-slate-950 p-6 relative overflow-hidden flex items-center justify-center">
-                 {/* Visual Mockup - More Neon style */}
-                 <div className="w-1/2 h-full bg-white dark:bg-slate-900 rounded-t-2xl border-x border-t border-slate-200 dark:border-slate-800 p-4 space-y-3 shadow-2xl transform group-hover:translate-y-2 transition-transform duration-500">
-                    <div className="flex gap-2">
-                       <div className={`w-5 h-5 rounded-lg ${template.accent} opacity-40 shadow-[0_0_10px_rgba(0,0,0,0.2)]`}></div>
-                       <div className="flex-1 space-y-1.5">
-                          <div className={`h-1.5 w-3/4 ${template.accent} opacity-60 rounded-full`}></div>
-                          <div className="h-1 w-1/2 bg-slate-100 dark:bg-slate-800 rounded-full"></div>
-                       </div>
-                    </div>
-                    <div className="space-y-1.5 pt-2">
-                       {[1,2,3,4].map(i => <div key={i} className="h-1 w-full bg-slate-50 dark:bg-slate-800/50 rounded-full"></div>)}
-                    </div>
+                 {/* Visual Mockup - More Professional mini-resume style */}
+                 <div className="w-1/2 h-full bg-white rounded-t-2xl border-x border-t border-slate-200 p-0 shadow-2xl transform group-hover:translate-y-2 transition-transform duration-500 overflow-hidden">
+                    {template.preview}
                  </div>
 
                  {/* Hover Action */}

@@ -5,56 +5,95 @@ const TemplateSelector = ({ selectedTemplate, onSelect }) => {
   const templates = [
     {
       id: 'modern',
-      name: 'Modern Blue',
-      description: 'Clean and professional with a touch of color.',
+      name: 'Modern Executive',
+      description: 'Sleek two-column design with a professional blue touch.',
       preview: (
-        <div className="w-full h-full bg-white p-2 flex flex-col gap-1 pointer-events-none select-none overflow-hidden">
-          <div className="flex gap-2 mb-1">
-             <div className="w-8 h-8 rounded-full bg-gray-200"></div>
-             <div className="flex-1 space-y-1">
-                <div className="h-2 w-2/3 bg-gray-800 rounded"></div>
-                <div className="h-1 w-1/2 bg-gray-400 rounded"></div>
-             </div>
+        <div className="w-full h-full bg-white p-2 flex gap-1 pointer-events-none select-none overflow-hidden text-[4px]">
+          <div className="w-1/3 bg-slate-50 border-r border-slate-100 p-1 space-y-2">
+            <div className="w-6 h-6 rounded-full bg-slate-200 mx-auto"></div>
+            <div className="space-y-1">
+              <div className="h-1 w-full bg-slate-200"></div>
+              <div className="h-1 w-4/5 bg-slate-100"></div>
+            </div>
           </div>
-          <div className="flex gap-2 flex-1">
-             <div className="w-2/3 space-y-2">
-                <div className="h-1.5 w-full bg-gray-200 rounded"></div>
-                <div className="h-1.5 w-full bg-gray-200 rounded"></div>
-                <div className="h-1.5 w-3/4 bg-gray-200 rounded"></div>
-                
-                <div className="mt-2 h-2 w-1/3 bg-blue-600 rounded"></div>
-                <div className="h-1.5 w-full bg-gray-200 rounded"></div>
-                <div className="h-1.5 w-full bg-gray-200 rounded"></div>
-             </div>
-             <div className="w-1/3 bg-gray-50 p-1 space-y-1">
-                <div className="h-1.5 w-full bg-gray-300 rounded"></div>
-                <div className="h-1.5 w-full bg-gray-300 rounded"></div>
-                <div className="h-1.5 w-full bg-gray-300 rounded"></div>
-             </div>
+          <div className="flex-1 p-1 space-y-2">
+            <div className="space-y-1">
+              <div className="h-2 w-1/2 bg-slate-800"></div>
+              <div className="h-1 w-1/3 bg-blue-600"></div>
+            </div>
+            <div className="h-px bg-slate-100 w-full"></div>
+            <div className="space-y-1">
+              {[1,2,3].map(i => <div key={i} className="h-1 w-full bg-slate-100"></div>)}
+            </div>
           </div>
         </div>
       )
     },
     {
       id: 'classic',
-      name: 'Classic Pro',
+      name: 'Standard Corporate',
       description: 'Timeless black & white design for all industries.',
       preview: (
-        <div className="w-full h-full bg-white p-3 flex flex-col items-center gap-1 pointer-events-none select-none overflow-hidden">
-          <div className="h-2 w-1/2 bg-black mb-1"></div>
-          <div className="h-1 w-1/3 bg-gray-500 mb-2"></div>
-          
-          <div className="w-full space-y-2 text-left">
-             <div className="h-1.5 w-full border-b border-black"></div>
-             <div className="h-1 w-full bg-gray-300"></div>
-             <div className="h-1 w-full bg-gray-300"></div>
-             
-             <div className="mt-2 h-1.5 w-full border-b border-black"></div>
-             <div className="flex justify-between">
-                <div className="h-1 w-1/4 bg-gray-800"></div>
-                <div className="h-1 w-1/4 bg-gray-500"></div>
-             </div>
-             <div className="h-1 w-full bg-gray-300"></div>
+        <div className="w-full h-full bg-white p-3 flex flex-col items-center gap-1 pointer-events-none select-none overflow-hidden text-[4px] border-t-2 border-slate-800">
+          <div className="h-2 w-1/2 bg-slate-900 mb-0.5"></div>
+          <div className="flex gap-2 mb-2">
+            <div className="h-1 w-8 bg-slate-100"></div>
+            <div className="h-1 w-8 bg-slate-100"></div>
+          </div>
+          <div className="w-full h-px bg-slate-200 mb-2"></div>
+          <div className="w-full space-y-2">
+            {[1,2].map(i => (
+              <div key={i} className="space-y-1">
+                <div className="flex justify-between items-center border-b border-slate-100 pb-0.5">
+                  <div className="h-1 w-12 bg-slate-800"></div>
+                  <div className="h-1 w-6 bg-slate-300"></div>
+                </div>
+                <div className="h-1 w-full bg-slate-100"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'creative',
+      name: 'Creative Impact',
+      description: 'Bold sidebar and design for creative roles.',
+      preview: (
+        <div className="w-full h-full bg-white flex pointer-events-none select-none overflow-hidden text-[4px]">
+          <div className="w-[35%] bg-slate-900 p-2 space-y-3">
+            <div className="w-5 h-5 rounded-full bg-slate-700 mx-auto border border-purple-500/30"></div>
+            <div className="space-y-1">
+              <div className="h-1 w-full bg-white"></div>
+              <div className="h-0.5 w-1/2 bg-purple-400"></div>
+            </div>
+          </div>
+          <div className="flex-1 p-2 space-y-2">
+            <div className="flex items-center gap-1">
+              <div className="w-2 h-0.5 bg-purple-600"></div>
+              <div className="h-1.5 w-10 bg-slate-900"></div>
+            </div>
+            <div className="space-y-1">
+              {[1,2].map(i => <div key={i} className="h-1 w-full bg-slate-100"></div>)}
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'basic',
+      name: 'Clean Minimalist',
+      description: 'ATS-friendly simple text-based design.',
+      preview: (
+        <div className="w-full h-full bg-white p-3 space-y-2 pointer-events-none select-none overflow-hidden text-[4px]">
+          <div className="border-b border-slate-900 pb-1">
+            <div className="h-1.5 w-1/3 bg-slate-900 mb-0.5"></div>
+            <div className="h-1 w-1/2 bg-slate-400"></div>
+          </div>
+          <div className="space-y-1">
+            <div className="h-1 w-1/4 bg-slate-800"></div>
+            <div className="h-1 w-full bg-slate-50"></div>
+            <div className="h-1 w-full bg-slate-50"></div>
           </div>
         </div>
       )
