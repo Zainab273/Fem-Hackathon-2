@@ -86,8 +86,8 @@ const ResumePreview = () => {
       </div>
 
       {/* Main Preview Area */}
-      <div className="max-w-5xl mx-auto py-12 px-4 flex justify-center">
-        <div className="shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform transition-transform hover:scale-[1.01] duration-500">
+      <div className="max-w-5xl mx-auto py-12 px-4 flex justify-center overflow-auto">
+        <div className="shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform transition-transform hover:scale-[1.01] duration-500 min-w-max">
           <div className="bg-white">
             {renderTemplate()}
           </div>
